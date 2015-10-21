@@ -19,7 +19,7 @@ limitations under the License.
 
 import yaml
 
-from .rt.Server import RTServer
+from . import rt
 
 class Session(object):
     """
@@ -61,7 +61,7 @@ class Session(object):
         Factory function for adding servers
         """
         if   kind == 'rt':
-            self.servers[name] = RTServer(url, user)
+            self.servers[name] = rt.Server(url, user)
         elif kind == 'dummy':
             self.servers[name] = None
         else:

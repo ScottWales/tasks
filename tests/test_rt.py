@@ -17,8 +17,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from . import base
+from task import rt
 
-class Server(base.Server):
-    def __init__(self, *args, **kwargs):
-        super(Server,self).__init__(*args, **kwargs)
+def test_server():
+    s = rt.Server(url='http://example.com')
